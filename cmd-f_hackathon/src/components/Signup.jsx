@@ -62,14 +62,15 @@ const Signup = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <br />
-        <button type="submit">Sign up</button>
+        <button type="button" class="btn btn-primary">Sign up</button>
       </form>
       <p>or</p>
-      <button>Sign up with Google</button>
-      <br />
-      <button>Sign up with Apple</button>
-      <br />
-      <button onClick={() => navigate("/")}>Go to main page</button>
+      <p class="d-grid gap-2 col-10 mx-auto">
+        <button type="button" class="btn btn-primary" >Sign in</button>
+        <button type="button" class="btn btn-primary">Sign up</button>
+        <button type="button" class="btn btn-primary" onClick={() => navigate("/")}>Go to main page</button>
+      </p>
+
     </div>
   );
 };

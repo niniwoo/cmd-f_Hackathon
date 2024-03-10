@@ -33,17 +33,19 @@ const Signin = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button onClick={handleSignIn} style={{ marginBottom: "10px" }}>
+      <button class="btn btn-primary" type="button" onClick={handleSignIn} style={{ marginBottom: "10px" }}>
         Sign In
       </button>
       <p style={{ marginTop: "20px", marginBottom: "10px" }}>or</p>
       <div style={{ marginBottom: "10px" }}>
-        <button>Login With Google</button>
-        <button>Login With Apple</button>
+        <p class="d-inline-flex gap-1">
+          <button type="button" class="btn btn-primary" >Sign in</button>
+          <button type="button" class="btn btn-primary">Sign up</button>
+        </p>
       </div>
       <div>
         <p style={{ marginTop: "10px" }}>You don't have an account?</p>
-        <button onClick={() => navigate("/signup")}>Sign Up</button>
+        <button type="button" class="btn btn-primary" onClick={() => navigate("/signup")}>Sign Up</button>
       </div>
     </div>
   );

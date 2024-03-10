@@ -33,13 +33,14 @@ const Mypage = () => {
         </div>
         <div onClick={logOut}>Logout</div>
       </div>
-      <div>
-        <button onClick={handleRecentClick} style={{ marginBottom: "10px" }}>
-          Recent
-        </button>
-      </div>
+
+      <p class="d-inline-flex gap-1">
+        <button type="button" class="btn btn-primary" onClick={handleRecentClick}>Recent</button>
+        <button type="button" class="btn btn-primary" onClick={handleHistoryClick}>History</button>
+      </p>
 
       <div>
+
         <button onClick={handleHistoryClick} style={{ marginBottom: "10px" }}>
           History
         </button>
@@ -73,6 +74,7 @@ const Mypage = () => {
         </div>
       </div>
       <NavBar />
+
     </div>
   );
 };

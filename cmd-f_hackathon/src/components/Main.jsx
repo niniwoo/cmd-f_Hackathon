@@ -25,10 +25,14 @@ const Main = () => {
   return (
     <div>
       <h1>This is main page</h1>
-      <button onClick={handleUrgentClick}>Urgent Item</button>
-      <button onClick={handleSeeMoreClick}>See more item</button>
 
-      <button onClick={() => navigate("/mypage")}>To my page</button>
+
+      <p class="d-inline-flex gap-1">
+        <button type="button" class="btn btn-primary" onClick={handleUrgentClick}>Urgen Item</button>
+        <button type="button" class="btn btn-primary" onClick={handleSeeMoreClick}>See More Item</button>
+        <button type="button" class="btn btn-primary" onClick={() => navigate("/mypage")}>To my page</button>
+      </p>
+
       <div>
         {showUrgent
           ? urgentData.map((item) => (
