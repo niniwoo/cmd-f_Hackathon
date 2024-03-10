@@ -12,6 +12,7 @@ import Signup from "./components/Signup";
 import Posting from "./components/Posting";
 import Posting2 from "./components/Posting2";
 import PostingDetail from "./components/PostingDetail";
+import Chat from "./components/Chat";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<FirstPage />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/chat" element={<Chat />} />
+
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/posting" element={<Posting />} />

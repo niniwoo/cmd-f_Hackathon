@@ -1,13 +1,20 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import urgentData from "../data/urgent";
 import regularData from "../data/regular";
 
 const PostingDetail = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const posting = [...urgentData, ...regularData].find(
     (item) => item.id.toString() === id
   );
+  const goBack = () => {
+    navigate(-1);
+  };
+  const goChat = () => {
+    navigate("/chat");
+  };
 
   if (!posting) {
     return <div>Posting not found!</div>;
@@ -20,6 +27,8 @@ const PostingDetail = () => {
       <p>Expiry Date: {posting.expiryDate}</p>
       <p>Description: {posting.description}</p>
       <p>Quantity: {posting.quantity}</p>
+      <button onClick={goChat}>Contact Now</button>
+      <button onClick={goBack}>Go back</button>
     </div>
   );
 };
