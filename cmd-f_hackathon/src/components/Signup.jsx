@@ -25,7 +25,7 @@ const Signup = () => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      navigate("/signin");
+      navigate("/");
     }
   };
 
@@ -33,7 +33,7 @@ const Signup = () => {
     <div className="container p-3">
       <div
         className="row justify-content-center col-md-6 p-3"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
         <div className="col-md-12 p-3">
           <h3>Sign up</h3>
@@ -72,12 +72,17 @@ const Signup = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
             <br />
-            <button type="submit" className="btn btn-primary col-md-6">
+            <button type="submit" className="btn btn-primary col-md-12">
               Sign up
             </button>
           </form>
           <div className="justify-content-center">
-            <p>or</p>
+            <div
+              style={{ margin: "10px" }}
+              className="justify-content-center text-center col-md-12"
+            >
+              or
+            </div>
             <p className="d-grid gap-2 col-10 mx-auto">
               <button type="button" className="btn btn-light">
                 Sign up with Google

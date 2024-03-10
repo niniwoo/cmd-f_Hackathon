@@ -34,7 +34,7 @@ const Posting = () => {
     <div className="container">
       <div
         className="row justify-content-center col-md-6 p-3"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
         <form className="col-md-12 p-3" onSubmit={handleSubmit}>
           <div>

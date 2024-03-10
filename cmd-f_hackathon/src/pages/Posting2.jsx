@@ -40,7 +40,7 @@ const Posting2 = () => {
     <div className="container p-3 justify-content-center align-items-center">
       <div
         className="row justify-content-center col-md-6"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
         <div>
           <div>

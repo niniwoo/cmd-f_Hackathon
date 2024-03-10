@@ -6,7 +6,7 @@ const Chat = () => {
     <div className="container p-3">
       <div
         className="row justify-content-center col-md-6"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
         <div className="col-md-12">
           <div className="card">

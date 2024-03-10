@@ -26,13 +26,16 @@ const PostingDetail = () => {
     <div className="container p-3">
       <div
         className="row justify-content-center col-md-6 p-3"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
         <div className="col-md-12">
           <div>
-
             <h2>Username: {posting.username}</h2>
-            <img style={{ width: '100%', height: 200, borderRadius: '10px' }} src={require('../images/bread.png')} alt=" " />
+            <img
+              style={{ width: "100%", height: 200, borderRadius: "10px" }}
+              src={require("../images/bread.png")}
+              alt=" "
+            />
             <div className="d-flex">
               <FontAwesomeIcon icon={faUser} />
               <div style={{ marginLeft: "10px", paddingBottom: "15px" }}>

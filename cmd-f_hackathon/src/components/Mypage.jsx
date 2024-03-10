@@ -30,35 +30,45 @@ const Mypage = () => {
     <div className="container p-3">
       <div
         className="row justify-content-center col-md-6 p-3"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
-        <div className="d-flex align-content-center">
-          <FontAwesomeIcon icon={faUser} size="2x" />
-          <div style={{ marginLeft: "20px" }}>
-            <div className="row mr-3">john</div>
-            <div className="row ">john@gmail.com</div>
+        <div
+          className="d-flex align-content-center"
+          style={{ marginTop: "15px" }}
+        >
+          <div style={{ marginTop: "8px" }}>
+            <FontAwesomeIcon icon={faUser} size="2x" />
+          </div>
+
+          <div style={{ marginLeft: "20px", marginBottom: "10px" }}>
+            <div>John Doe</div>
+            <div style={{ fontSize: "13px" }}>John@gmail.com</div>
           </div>
         </div>
-        <div className="btn btn-dark" onClick={logOut}>
+        <div
+          className="btn btn-dark"
+          style={{ margin: "5px" }}
+          onClick={logOut}
+        >
           Logout
         </div>
 
-        <p className="d-inline-flex gap-1">
-          <button
+        <div className="d-inline-flex gap-1 justify-content-center">
+          <div
             type="button"
-            className="btn btn-primary"
+            className="btn btn-primary col-md-6"
             onClick={handleRecentClick}
           >
             Recent
-          </button>
-          <button
+          </div>
+          <div
             type="button"
-            className="btn btn-primary"
+            className="btn btn-primary col-md-6"
             onClick={handleHistoryClick}
           >
             History
-          </button>
-        </p>
+          </div>
+        </div>
 
         <div>
           {showHistory
@@ -72,7 +82,6 @@ const Mypage = () => {
                   <p>Item Status: {item.status}</p>
                   <p>Expiry Date: {item.expiryDate}</p>
                   <p>Description: {item.description}</p>
-                  <hr />
                 </div>
               ))
             : recentData.map((item) => (

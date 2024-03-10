@@ -20,7 +20,7 @@ const Signin = () => {
     <div className="container p-3">
       <div
         className="row justify-content-center col-md-6"
-        style={{ backgroundColor: "lightgrey" }}
+        style={{ backgroundColor: "#FDF4EB" }}
       >
         <div className="col-md-12 p-3">
           <div className="row justify-content-center col-md-12 mb-4">
