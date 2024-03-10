@@ -2,6 +2,7 @@ import historyData from "../data/history";
 import recentData from "../data/recent";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import NavBar from "./NavBar";
 
 const Mypage = () => {
   const navigate = useNavigate();
@@ -10,7 +11,9 @@ const Mypage = () => {
   const handleHistoryClick = () => {
     setShowHistory(true);
   };
-
+  const logOut = () => {
+    navigate("/");
+  };
   const handleRecentClick = () => {
     setShowHistory(false);
   };
@@ -24,7 +27,11 @@ const Mypage = () => {
     <div>
       <h1> This is my page</h1>
       <div>
-        <button style={{ marginBottom: "10px" }}>Profile</button>
+        <div>
+          <p>john</p>
+          <p>john@gmail.com</p>
+        </div>
+        <div onClick={logOut}>Logout</div>
       </div>
 
       <p class="d-inline-flex gap-1">
@@ -32,36 +39,41 @@ const Mypage = () => {
         <button type="button" class="btn btn-primary" onClick={handleHistoryClick}>History</button>
       </p>
 
-
-
       <div>
-        {showHistory && showHistory
-          ? historyData.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => handleClickItem(item.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <h2>{item.name}</h2>
-              <p>Expiry Date: {item.expiryDate}</p>
-              <p>Description: {item.description}</p>
-              <hr />
-            </div>
-          ))
-          : recentData.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => handleClickItem(item.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <h2>{item.name}</h2>
-              <p>Username: {item.username}</p>
-              <p>Expiry Date: {item.expiryDate}</p>
-              <p>Description: {item.description}</p>
-              <hr />
-            </div>
-          ))}
+
+        <button onClick={handleHistoryClick} style={{ marginBottom: "10px" }}>
+          History
+        </button>
+        <div>
+          {showHistory && showHistory
+            ? historyData.map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => handleClickItem(item.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <h2>{item.name}</h2>
+                  <p>Item Status: {item.status}</p>
+                  <p>Expiry Date: {item.expiryDate}</p>
+                  <p>Description: {item.description}</p>
+                  <hr />
+                </div>
+              ))
+            : recentData.map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => handleClickItem(item.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <h2>{item.name}</h2>
+                  <p>Expiry Date: {item.expiryDate}</p>
+                  <p>Description: {item.description}</p>
+                  <hr />
+                </div>
+              ))}
+        </div>
       </div>
+      <NavBar />
 
     </div>
   );
