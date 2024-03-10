@@ -30,6 +30,9 @@ const PostingDetail = () => {
       >
         <div className="col-md-12">
           <div>
+
+            <h2>Username: {posting.username}</h2>
+            <img style={{ width: '100%', height: 200, borderRadius: '10px' }} src={require('../images/bread.png')} alt=" " />
             <div className="d-flex">
               <FontAwesomeIcon icon={faUser} />
               <div style={{ marginLeft: "10px", paddingBottom: "15px" }}>
@@ -37,7 +40,6 @@ const PostingDetail = () => {
                 {posting.username}
               </div>
             </div>
-
             {/* Image   <p>{posting.picture}</p> */}
             <h3>{posting.name}</h3>
             <p>Quantity: {posting.quantity}</p>

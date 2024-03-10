@@ -52,11 +52,13 @@ const Main = () => {
           <div>
             {showUrgent
               ? urgentData.map((item) => (
+
                   <div
                     key={item.id}
                     onClick={() => handleClickItem(item.id)}
                     style={{ cursor: "pointer" }}
                   >
+                     <img style={{ width: '100%', height: 200, borderRadius: '10px' }} src={item.picture} alt={item.name} />
                     <p style={{ fontWeight: "bold" }}>{item.name}</p>
                     <p>Expiry Date: {item.expiryDate}</p>
                     <p>Description: {item.description}</p>
@@ -66,15 +68,19 @@ const Main = () => {
                         <FontAwesomeIcon icon={faUser} />
                         {item.username}
                       </div>
+
                     </div>
                   </div>
-                ))
+                </div>
+              ))
               : regularData.map((item) => (
+
                   <div
                     key={item.id}
                     onClick={() => handleClickItem(item.id)}
                     style={{ cursor: "pointer" }}
                   >
+                     <img style={{ width: '100%', height: 200, borderRadius: '10px' }} src={item.picture} alt={item.name} />
                     <p style={{ fontWeight: "bold" }}>{item.name}</p>
                     <p>Expiry Date: {item.expiryDate}</p>
                     <p>Description: {item.description}</p>
@@ -84,9 +90,11 @@ const Main = () => {
                         <FontAwesomeIcon icon={faUser} />
                         {item.username}
                       </div>
+
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
           </div>
         </div>
         <NavBar />
