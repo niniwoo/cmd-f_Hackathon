@@ -25,17 +25,18 @@ const Main = () => {
   };
 
   return (
-    <div className="container p-3">
+    <div className="container">
       <div
-        style={{ backgroundColor: "lightgrey" }}
-        className="row justify-content-center col-md-6 p-3"
+        style={{ backgroundColor: "lightgrey", padding: "15px" }}
+        className="row justify-content-center col-md-6"
       >
         <div className="col-md-12">
-          <p className="d-flex justify-content-between col-md-12">
+          <p className="d-flex col-md-12 justify-content-center">
             <button
               type="button"
               className="btn btn-primary col-md-6" // Add margin to the right for spacing
               onClick={handleUrgentClick}
+              style={{ marginRight: "15px" }}
             >
               Urgent Item
             </button>
@@ -60,8 +61,8 @@ const Main = () => {
                     <p>Expiry Date: {item.expiryDate}</p>
                     <p>Description: {item.description}</p>
                     <div className="col d-flex mb-3 align-items-center">
-                      <div className="mr-6 btn btn-light">More Info</div>
-                      <div>
+                      <div className="btn btn-light">More Info</div>
+                      <div style={{ marginLeft: "10px" }}>
                         <FontAwesomeIcon icon={faUser} />
                         {item.username}
                       </div>
@@ -77,9 +78,9 @@ const Main = () => {
                     <p style={{ fontWeight: "bold" }}>{item.name}</p>
                     <p>Expiry Date: {item.expiryDate}</p>
                     <p>Description: {item.description}</p>
-                    <div className="col d-flex mb-3 align-items-center">
-                      <div className="mr-6 btn btn-light">More Info</div>
-                      <div>
+                    <div className="col d-flex mb-3 align-items-center ">
+                      <div className="btn btn-light">More Info</div>
+                      <div style={{ marginLeft: "10px" }}>
                         <FontAwesomeIcon icon={faUser} />
                         {item.username}
                       </div>

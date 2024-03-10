@@ -31,8 +31,8 @@ const Chat = () => {
             </div>
           </div>
         </div>
+        <NavBar />
       </div>
-      <NavBar />
     </div>
   );
 };

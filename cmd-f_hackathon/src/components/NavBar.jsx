@@ -8,7 +8,7 @@ import {
   faComments,
 } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = () => {
+const NavBar = ({ contentWidth }) => {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
@@ -16,8 +16,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="container p-3">
-      <nav className="navbar fixed-bottom navbar-light bg-light justify-content-center col-md-6 p-3">
+    <div className="container" style={{ width: contentWidth }}>
+      <nav className="navbar navbar-light bg-light">
         <div className="container-fluid justify-content-around">
           <div className="navbar-brand" onClick={() => handleNavigate("/main")}>
             <FontAwesomeIcon icon={faHouseChimney} />
@@ -29,7 +29,10 @@ const NavBar = () => {
             <FontAwesomeIcon icon={faPlus} />
           </div>
 
-          <div className="navbar-brand" onClick={() => handleNavigate("/chat")}>
+          <div
+            className="navbar-brand"
+            onClick={() => handleNavigate("/contact")}
+          >
             <FontAwesomeIcon icon={faComments} />
           </div>
           <div
