@@ -66,14 +66,22 @@ const Main = () => {
                       src={item.picture}
                       alt={item.name}
                     />
-                    <p style={{ fontWeight: "bold" }}>{item.name}</p>
-                    <p>Expiry Date: {item.expiryDate}</p>
-                    <p>Description: {item.description}</p>
+                    <p style={{ fontWeight: "bold", marginTop: "15px" }}>
+                      {item.name}
+                    </p>
+                    <p style={{ marginTop: "-10px" }}>
+                      Expiry Date: {item.expiryDate}
+                    </p>
+                    <p style={{ marginTop: "-8px" }}>
+                      Description: {item.description}
+                    </p>
                     <div className="col d-flex mb-3 align-items-center">
                       <div className="btn btn-light">More Info</div>
                       <div style={{ marginLeft: "10px" }}>
                         <FontAwesomeIcon icon={faUser} />
-                        {item.username}
+                        <span style={{ marginLeft: "6px" }}>
+                          {item.username}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -93,14 +101,22 @@ const Main = () => {
                       src={item.picture}
                       alt={item.name}
                     />
-                    <p style={{ fontWeight: "bold" }}>{item.name}</p>
-                    <p>Expiry Date: {item.expiryDate}</p>
-                    <p>Description: {item.description}</p>
+                    <p style={{ fontWeight: "bold", marginTop: "15px" }}>
+                      {item.name}
+                    </p>
+                    <p style={{ marginTop: "-10px" }}>
+                      Expiry Date: {item.expiryDate}
+                    </p>
+                    <p style={{ marginTop: "-8px" }}>
+                      Description: {item.description}
+                    </p>
                     <div className="col d-flex mb-3 align-items-center ">
                       <div className="btn btn-light">More Info</div>
                       <div style={{ marginLeft: "10px" }}>
                         <FontAwesomeIcon icon={faUser} />
-                        {item.username}
+                        <span style={{ marginLeft: "6px" }}>
+                          {item.username}
+                        </span>
                       </div>
                     </div>
                   </div>
