@@ -3,19 +3,22 @@ import NavBar from "./NavBar";
 
 const Chat = () => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-8 offset-md-2">
+    <div className="container p-3">
+      <div
+        className="row justify-content-center col-md-6"
+        style={{ backgroundColor: "lightgrey" }}
+      >
+        <div className="col-md-12">
           <div className="card">
             <div className="card-header">Chat</div>
             <div className="card-body">
               <div className="message received">
-                <div className="message-info">Sender</div>
-                <div className="message-text">Hello there!</div>
-              </div>
-              <div>
-                <div>Hi there!</div>
-                <div>You</div>
+                <div className="message-info" style={{ fontWeight: "bold" }}>
+                  User
+                </div>
+                <div className="message-text">
+                  Hello there! I'm interested in 2 Avocados
+                </div>
               </div>
             </div>
             <div className="card-footer">

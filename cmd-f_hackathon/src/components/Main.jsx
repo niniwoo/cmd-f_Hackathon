@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import urgentData from "../data/urgent";
 import regularData from "../data/regular";
 import NavBar from "./NavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -23,46 +25,71 @@ const Main = () => {
   };
 
   return (
-    <div>
-      <h1>This is main page</h1>
+    <div className="container p-3">
+      <div
+        style={{ backgroundColor: "lightgrey" }}
+        className="row justify-content-center col-md-6 p-3"
+      >
+        <div className="col-md-12">
+          <p className="d-flex justify-content-between col-md-12">
+            <button
+              type="button"
+              className="btn btn-primary col-md-6" // Add margin to the right for spacing
+              onClick={handleUrgentClick}
+            >
+              Urgent Item
+            </button>
+            <button
+              type="button"
+              className="btn btn-primary col-md-6"
+              onClick={handleSeeMoreClick}
+            >
+              See More Item
+            </button>
+          </p>
 
-
-      <p class="d-inline-flex gap-1">
-        <button type="button" class="btn btn-primary" onClick={handleUrgentClick}>Urgen Item</button>
-        <button type="button" class="btn btn-primary" onClick={handleSeeMoreClick}>See More Item</button>
-        <button type="button" class="btn btn-primary" onClick={() => navigate("/mypage")}>To my page</button>
-      </p>
-
-      <div>
-        {showUrgent
-          ? urgentData.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => handleClickItem(item.id)}
-                style={{ cursor: "pointer" }}
-              >
-                <h2>{item.name}</h2>
-                <p>Username: {item.username}</p>
-                <p>Expiry Date: {item.expiryDate}</p>
-                <p>Description: {item.description}</p>
-                <hr />
-              </div>
-            ))
-          : regularData.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => handleClickItem(item.id)}
-                style={{ cursor: "pointer" }}
-              >
-                <h2>{item.name}</h2>
-                <p>Username: {item.username}</p>
-                <p>Expiry Date: {item.expiryDate}</p>
-                <p>Description: {item.description}</p>
-                <hr />
-              </div>
-            ))}
+          <div>
+            {showUrgent
+              ? urgentData.map((item) => (
+                  <div
+                    key={item.id}
+                    onClick={() => handleClickItem(item.id)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p style={{ fontWeight: "bold" }}>{item.name}</p>
+                    <p>Expiry Date: {item.expiryDate}</p>
+                    <p>Description: {item.description}</p>
+                    <div className="col d-flex mb-3 align-items-center">
+                      <div className="mr-6 btn btn-light">More Info</div>
+                      <div>
+                        <FontAwesomeIcon icon={faUser} />
+                        {item.username}
+                      </div>
+                    </div>
+                  </div>
+                ))
+              : regularData.map((item) => (
+                  <div
+                    key={item.id}
+                    onClick={() => handleClickItem(item.id)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p style={{ fontWeight: "bold" }}>{item.name}</p>
+                    <p>Expiry Date: {item.expiryDate}</p>
+                    <p>Description: {item.description}</p>
+                    <div className="col d-flex mb-3 align-items-center">
+                      <div className="mr-6 btn btn-light">More Info</div>
+                      <div>
+                        <FontAwesomeIcon icon={faUser} />
+                        {item.username}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+          </div>
+        </div>
+        <NavBar />
       </div>
-      <NavBar />
     </div>
   );
 };

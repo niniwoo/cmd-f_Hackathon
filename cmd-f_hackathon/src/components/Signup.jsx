@@ -19,58 +19,75 @@ const Signup = () => {
       setErrorMessage("Passwords do not match.");
       setSuccessMessage("");
     } else {
-      setSuccessMessage("Thanks for signing up!");
+      alert("Thanks for signing up!");
       setErrorMessage("");
       setUsername("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      navigate("/signin");
     }
   };
 
   return (
-    <div>
-      <h1>This is Sign up page</h1>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <br />
-        <button type="button" class="btn btn-primary">Sign up</button>
-      </form>
-      <p>or</p>
-      <p class="d-grid gap-2 col-10 mx-auto">
-        <button type="button" class="btn btn-primary" >Sign in</button>
-        <button type="button" class="btn btn-primary">Sign up</button>
-        <button type="button" class="btn btn-primary" onClick={() => navigate("/")}>Go to main page</button>
-      </p>
-
+    <div className="container p-3">
+      <div
+        className="row justify-content-center col-md-6 p-3"
+        style={{ backgroundColor: "lightgrey" }}
+      >
+        <div className="col-md-12 p-3">
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+          <form onSubmit={handleSubmit}>
+            <label>Username</label>
+            <input
+              type="text"
+              value={username}
+              className="form-control"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <br />
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              className="form-control"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <br />
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              className="form-control"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <br />
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              value={confirmPassword}
+              className="form-control"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <br />
+            <button type="submit" className="btn btn-primary col-md-6">
+              Sign up
+            </button>
+          </form>
+          <div className="justify-content-center">
+            <p>or</p>
+            <p className="d-grid gap-2 col-10 mx-auto">
+              <button type="button" className="btn btn-light">
+                Sign up with Google
+              </button>
+              <button type="button" className="btn btn-light">
+                Sign up with Apple
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

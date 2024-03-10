@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 const Posting2 = () => {
+  const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState({
     checklist1: false,
     checklist2: false,
@@ -26,56 +28,68 @@ const Posting2 = () => {
     if (uncheckedCheckboxes.length === 0) {
       setErrorMessage("");
       alert("Form submitted successfully!");
+      navigate("/main");
     } else {
-      setErrorMessage(`You can't post [ ${uncheckedCheckboxes.join(", ")} ]`);
+      setErrorMessage(
+        `Posting failed. Please ensure all required conditions are met.`
+      );
     }
   };
 
   return (
-    <div>
-      <div>
-        <label>Image</label>
-        <input type="file" id="image" accept="image/*" />
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="checklist1"
-            onChange={handleCheckboxChange}
-          />
-          Check list1
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            name="checklist2"
-            onChange={handleCheckboxChange}
-          />
-          Check list2
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            name="checklist3"
-            onChange={handleCheckboxChange}
-          />
-          Check list3
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            name="checklist4"
-            onChange={handleCheckboxChange}
-          />
-          Check list4
-        </label>
-        <br />
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        <button onClick={handleSubmit}>Submit</button>
+    <div className="container p-3 d-flex justify-content-center align-items-center">
+      <div
+        className="row justify-content-center col-md-6 p-3"
+        style={{ backgroundColor: "lightgrey" }}
+      >
+        <div className="p-3">
+          <div>
+            <label>Image of Item</label>
+            <input type="file" id="image" accept="image/*" />
+          </div>
+          <div className="mt-3">
+            <div>
+              <input
+                type="checkbox"
+                name="checklist1"
+                onChange={handleCheckboxChange}
+              />
+              Safe to consume for humans
+            </div>
+            <div className="mt-2">
+              <input
+                type="checkbox"
+                name="checklist2"
+                onChange={handleCheckboxChange}
+              />
+              Packaging not opened or re-sealed
+            </div>
+
+            <div className="mt-2">
+              <input
+                type="checkbox"
+                name="checklist3"
+                onChange={handleCheckboxChange}
+              />
+              Food isn't expired or moldy
+            </div>
+            <div className="mt-2">
+              <input
+                type="checkbox"
+                name="checklist4"
+                onChange={handleCheckboxChange}
+              />
+              Not a home-cooked meal
+            </div>
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+            <button
+              className="btn btn-primary col-md-4 mt-4"
+              onClick={handleSubmit}
+            >
+              upload
+            </button>
+          </div>
+        </div>
       </div>
       <NavBar />
     </div>
