@@ -1,11 +1,11 @@
 const history = [
   {
     id: 1,
-    name: "Apple",
+    name: "Lays chips",
     status: "Sold",
     picture: "https://example.com/apple.jpg",
     expiryDate: "2024-01-09",
-    description: "A juicy and delicious apple.",
+    description: "I got it from IGA but I haven't opened it yet.",
     quantity: 5,
   },
   {

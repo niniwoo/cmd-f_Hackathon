@@ -15,11 +15,22 @@ const FirstPage = () => {
   return (
     <div>
       <h1>Firstpage</h1>
-      <p>Logo</p>
 
-      <p class="d-grid gap-2 col-10 mx-auto">
-        <button type="button" class="btn btn-primary" >Sign in</button>
-        <button type="button" class="btn btn-primary">Sign up</button>
+      <p className="d-grid gap-2 col-10 mx-auto">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleSignIn}
+        >
+          Sign in
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleSignUp}
+        >
+          Sign up
+        </button>
       </p>
     </div>
   );

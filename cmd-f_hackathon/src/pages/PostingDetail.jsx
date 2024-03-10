@@ -21,17 +21,29 @@ const PostingDetail = () => {
     return <div>Posting not found!</div>;
   }
   return (
-    <div>
-      <div>
-        {" "}
-        <h1>{posting.name}</h1>
-        <p>Username: {posting.username}</p>
-        <p>{posting.picture}</p>
-        <p>Expiry Date: {posting.expiryDate}</p>
-        <p>Description: {posting.description}</p>
-        <p>Quantity: {posting.quantity}</p>
-        <button onClick={goChat}>Contact Now</button>
-        <button onClick={goBack}>Go back</button>
+    <div className="container p-3">
+      <div
+        className="row justify-content-center col-md-6 p-3"
+        style={{ backgroundColor: "lightgrey" }}
+      >
+        <div className="col-md-12 p-3">
+          <div>
+            <h2>Username: {posting.username}</h2>
+            {/* Image   <p>{posting.picture}</p> */}
+            <h3>{posting.name}</h3>
+            <p>Quantity: {posting.quantity}</p>
+            <p>Expiry Date: {posting.expiryDate}</p>
+            <div>Description: {posting.description}</div>
+            <div>Location</div>
+            <div>Source</div>
+            <div className="btn btn-primary" onClick={goChat}>
+              Contact Now
+            </div>
+            <div className="btn btn-primary" onClick={goBack}>
+              Go back
+            </div>
+          </div>
+        </div>
       </div>
       <NavBar />
     </div>
