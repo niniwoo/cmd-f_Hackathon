@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import urgentData from "../data/urgent";
@@ -54,6 +55,7 @@ const Main = () => {
                 <hr />
               </div>
             ))}
+
       </div>
     </div>
   );
