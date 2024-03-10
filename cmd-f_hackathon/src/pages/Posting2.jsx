@@ -37,12 +37,12 @@ const Posting2 = () => {
   };
 
   return (
-    <div className="container p-3 d-flex justify-content-center align-items-center">
+    <div className="container p-3 justify-content-center align-items-center">
       <div
-        className="row justify-content-center col-md-6 p-3"
+        className="row justify-content-center col-md-6"
         style={{ backgroundColor: "lightgrey" }}
       >
-        <div className="p-3">
+        <div>
           <div>
             <label>Image of Item</label>
             <input type="file" id="image" accept="image/*" />

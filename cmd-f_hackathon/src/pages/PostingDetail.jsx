@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import urgentData from "../data/urgent";
 import regularData from "../data/regular";
 import NavBar from "../components/NavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const PostingDetail = () => {
   const navigate = useNavigate();
@@ -26,10 +28,18 @@ const PostingDetail = () => {
         className="row justify-content-center col-md-6 p-3"
         style={{ backgroundColor: "lightgrey" }}
       >
-        <div className="col-md-12 p-3">
+        <div className="col-md-12">
           <div>
+
             <h2>Username: {posting.username}</h2>
             <img style={{ width: '100%', height: 200, borderRadius: '10px' }} src={require('../images/bread.png')} alt=" " />
+            <div className="d-flex">
+              <FontAwesomeIcon icon={faUser} />
+              <div style={{ marginLeft: "10px", paddingBottom: "15px" }}>
+                {" "}
+                {posting.username}
+              </div>
+            </div>
             {/* Image   <p>{posting.picture}</p> */}
             <h3>{posting.name}</h3>
             <p>Quantity: {posting.quantity}</p>
@@ -37,16 +47,23 @@ const PostingDetail = () => {
             <div>Description: {posting.description}</div>
             <div>Location</div>
             <div>Source</div>
-            <div className="btn btn-primary" onClick={goChat}>
-              Contact Now
+            <div style={{ marginBottom: "20px", marginTop: "10px" }}>
+              <div
+                className="btn btn-primary"
+                onClick={goChat}
+                style={{ marginRight: "20px" }}
+              >
+                Contact Now
+              </div>
+              <div className="btn btn-primary" onClick={goBack}>
+                Go back
+              </div>
             </div>
-            <div className="btn btn-primary" onClick={goBack}>
-              Go back
-            </div>
+
+            <NavBar />
           </div>
         </div>
       </div>
-      <NavBar />
     </div>
   );
 };

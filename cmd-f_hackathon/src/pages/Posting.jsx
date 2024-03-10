@@ -31,7 +31,7 @@ const Posting = () => {
   };
 
   return (
-    <div className="container p-3">
+    <div className="container">
       <div
         className="row justify-content-center col-md-6 p-3"
         style={{ backgroundColor: "lightgrey" }}
@@ -104,8 +104,8 @@ const Posting = () => {
             </button>
           </div>
         </form>
+        <NavBar />
       </div>
-      <NavBar />
     </div>
   );
 };

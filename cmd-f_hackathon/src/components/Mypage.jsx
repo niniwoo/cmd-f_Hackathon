@@ -15,7 +15,7 @@ const Mypage = () => {
   };
 
   const logOut = () => {
-    navigate("/signin");
+    navigate("/");
   };
 
   const handleRecentClick = () => {
@@ -29,70 +29,68 @@ const Mypage = () => {
   return (
     <div className="container p-3">
       <div
-        style={{ backgroundColor: "lightgrey" }}
         className="row justify-content-center col-md-6 p-3"
+        style={{ backgroundColor: "lightgrey" }}
       >
-        <div>
-          <div>
-            <div className="d-flex justify-content-center col-md-6">
-              <FontAwesomeIcon icon={faUser} size="2x" />
-              <div className="mr-3">john</div>
-              <p>john@gmail.com</p>
-            </div>
-            <div className="btn btn-dark" onClick={logOut}>
-              Logout
-            </div>
-          </div>
-
-          <p className="d-inline-flex gap-1">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleRecentClick}
-            >
-              Recent
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleHistoryClick}
-            >
-              History
-            </button>
-          </p>
-
-          <div>
-            {showHistory
-              ? historyData.map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => handleClickItem(item.id)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <h2>{item.name}</h2>
-                    <p>Item Status: {item.status}</p>
-                    <p>Expiry Date: {item.expiryDate}</p>
-                    <p>Description: {item.description}</p>
-                    <hr />
-                  </div>
-                ))
-              : recentData.map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => handleClickItem(item.id)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <h2>{item.name}</h2>
-                    <p>Expiry Date: {item.expiryDate}</p>
-                    <p>Description: {item.description}</p>
-                    <hr />
-                  </div>
-                ))}
+        <div className="d-flex align-content-center">
+          <FontAwesomeIcon icon={faUser} size="2x" />
+          <div style={{ marginLeft: "20px" }}>
+            <div className="row mr-3">john</div>
+            <div className="row ">john@gmail.com</div>
           </div>
         </div>
-      </div>
+        <div className="btn btn-dark" onClick={logOut}>
+          Logout
+        </div>
 
-      <NavBar />
+        <p className="d-inline-flex gap-1">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleRecentClick}
+          >
+            Recent
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleHistoryClick}
+          >
+            History
+          </button>
+        </p>
+
+        <div>
+          {showHistory
+            ? historyData.map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => handleClickItem(item.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <p>{item.name}</p>
+                  <p>Item Status: {item.status}</p>
+                  <p>Expiry Date: {item.expiryDate}</p>
+                  <p>Description: {item.description}</p>
+                  <hr />
+                </div>
+              ))
+            : recentData.map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => handleClickItem(item.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <p>{item.name}</p>
+                  <p>Expiry Date: {item.expiryDate}</p>
+                  <p>Description: {item.description}</p>
+                  <hr />
+                </div>
+              ))}
+        </div>
+
+        <NavBar />
+      </div>
     </div>
   );
 };

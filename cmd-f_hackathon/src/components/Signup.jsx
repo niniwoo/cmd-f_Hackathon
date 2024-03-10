@@ -36,6 +36,7 @@ const Signup = () => {
         style={{ backgroundColor: "lightgrey" }}
       >
         <div className="col-md-12 p-3">
+          <h3>Sign up</h3>
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
           <form onSubmit={handleSubmit}>

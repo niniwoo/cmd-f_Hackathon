@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FirstPage from "./components/FirstPage";
 import Main from "./components/Main";
 import Mypage from "./components/Mypage";
@@ -13,19 +9,21 @@ import Posting from "./pages/Posting";
 import Posting2 from "./pages/Posting2";
 import PostingDetail from "./pages/PostingDetail";
 import Chat from "./components/Chat";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<FirstPage />} />
+          <Route path="/" element={<Signin />} />
           <Route path="/main" element={<Main />} />
           <Route path="/chat" element={<Chat />} />
-          <Route path="/signin" element={<Signin />} />
+          {/* <Route path="/signin" element={<Signin />} /> */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/posting" element={<Posting />} />
           <Route path="/posting2" element={<Posting2 />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/post-detail/:id" element={<PostingDetail />} />
         </Routes>
