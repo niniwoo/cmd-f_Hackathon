@@ -27,34 +27,36 @@ const Main = () => {
       <h1>This is main page</h1>
       <button onClick={handleUrgentClick}>Urgent Item</button>
       <button onClick={handleSeeMoreClick}>See more item</button>
+
+      <button onClick={() => navigate("/mypage")}>To my page</button>
       <div>
         {showUrgent
           ? urgentData.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => handleClickItem(item.id)}
-                style={{ cursor: "pointer" }}
-              >
-                <h2>{item.name}</h2>
-                <p>Username: {item.username}</p>
-                <p>Expiry Date: {item.expiryDate}</p>
-                <p>Description: {item.description}</p>
-                <hr />
-              </div>
-            ))
+            <div
+              key={item.id}
+              onClick={() => handleClickItem(item.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <h2>{item.name}</h2>
+              <p>Username: {item.username}</p>
+              <p>Expiry Date: {item.expiryDate}</p>
+              <p>Description: {item.description}</p>
+              <hr />
+            </div>
+          ))
           : regularData.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => handleClickItem(item.id)}
-                style={{ cursor: "pointer" }}
-              >
-                <h2>{item.name}</h2>
-                <p>Username: {item.username}</p>
-                <p>Expiry Date: {item.expiryDate}</p>
-                <p>Description: {item.description}</p>
-                <hr />
-              </div>
-            ))}
+            <div
+              key={item.id}
+              onClick={() => handleClickItem(item.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <h2>{item.name}</h2>
+              <p>Username: {item.username}</p>
+              <p>Expiry Date: {item.expiryDate}</p>
+              <p>Description: {item.description}</p>
+              <hr />
+            </div>
+          ))}
 
       </div>
     </div>
