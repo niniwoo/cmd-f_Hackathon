@@ -17,16 +17,10 @@ const FirstPage = () => {
       <h1>Firstpage</h1>
       <p>Logo</p>
 
-      <button
-        type="button"
-        className="btn btn-primary active"
-        data-bs-toggle="button"
-        aria-pressed="true"
-      >
-        Active toggle button
-      </button>
-      <button onClick={handleSignIn}>Sign In</button>
-      <button onClick={handleSignUp}>Sign Up</button>
+      <p class="d-grid gap-2 col-10 mx-auto">
+        <button type="button" class="btn btn-primary" >Sign in</button>
+        <button type="button" class="btn btn-primary">Sign up</button>
+      </p>
     </div>
   );
 };

@@ -26,45 +26,43 @@ const Mypage = () => {
       <div>
         <button style={{ marginBottom: "10px" }}>Profile</button>
       </div>
-      <div>
-        <button onClick={handleRecentClick} style={{ marginBottom: "10px" }}>
-          Recent
-        </button>
-      </div>
+
+      <p class="d-inline-flex gap-1">
+        <button type="button" class="btn btn-primary" onClick={handleRecentClick}>Recent</button>
+        <button type="button" class="btn btn-primary" onClick={handleHistoryClick}>History</button>
+      </p>
+
+
 
       <div>
-        <button onClick={handleHistoryClick} style={{ marginBottom: "10px" }}>
-          History
-        </button>
-        <div>
-          {showHistory && showHistory
-            ? historyData.map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => handleClickItem(item.id)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <h2>{item.name}</h2>
-                  <p>Expiry Date: {item.expiryDate}</p>
-                  <p>Description: {item.description}</p>
-                  <hr />
-                </div>
-              ))
-            : recentData.map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => handleClickItem(item.id)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <h2>{item.name}</h2>
-                  <p>Username: {item.username}</p>
-                  <p>Expiry Date: {item.expiryDate}</p>
-                  <p>Description: {item.description}</p>
-                  <hr />
-                </div>
-              ))}
-        </div>
+        {showHistory && showHistory
+          ? historyData.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => handleClickItem(item.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <h2>{item.name}</h2>
+              <p>Expiry Date: {item.expiryDate}</p>
+              <p>Description: {item.description}</p>
+              <hr />
+            </div>
+          ))
+          : recentData.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => handleClickItem(item.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <h2>{item.name}</h2>
+              <p>Username: {item.username}</p>
+              <p>Expiry Date: {item.expiryDate}</p>
+              <p>Description: {item.description}</p>
+              <hr />
+            </div>
+          ))}
       </div>
+
     </div>
   );
 };
