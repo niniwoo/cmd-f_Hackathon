@@ -1,8 +1,8 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import urgentData from "../data/urgent";
 import regularData from "../data/regular";
+import NavBar from "./NavBar";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -32,33 +32,33 @@ const Main = () => {
       <div>
         {showUrgent
           ? urgentData.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => handleClickItem(item.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <h2>{item.name}</h2>
-              <p>Username: {item.username}</p>
-              <p>Expiry Date: {item.expiryDate}</p>
-              <p>Description: {item.description}</p>
-              <hr />
-            </div>
-          ))
+              <div
+                key={item.id}
+                onClick={() => handleClickItem(item.id)}
+                style={{ cursor: "pointer" }}
+              >
+                <h2>{item.name}</h2>
+                <p>Username: {item.username}</p>
+                <p>Expiry Date: {item.expiryDate}</p>
+                <p>Description: {item.description}</p>
+                <hr />
+              </div>
+            ))
           : regularData.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => handleClickItem(item.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <h2>{item.name}</h2>
-              <p>Username: {item.username}</p>
-              <p>Expiry Date: {item.expiryDate}</p>
-              <p>Description: {item.description}</p>
-              <hr />
-            </div>
-          ))}
-
+              <div
+                key={item.id}
+                onClick={() => handleClickItem(item.id)}
+                style={{ cursor: "pointer" }}
+              >
+                <h2>{item.name}</h2>
+                <p>Username: {item.username}</p>
+                <p>Expiry Date: {item.expiryDate}</p>
+                <p>Description: {item.description}</p>
+                <hr />
+              </div>
+            ))}
       </div>
+      <NavBar />
     </div>
   );
 };

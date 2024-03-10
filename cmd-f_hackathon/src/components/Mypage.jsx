@@ -2,6 +2,7 @@ import historyData from "../data/history";
 import recentData from "../data/recent";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import NavBar from "./NavBar";
 
 const Mypage = () => {
   const navigate = useNavigate();
@@ -10,7 +11,9 @@ const Mypage = () => {
   const handleHistoryClick = () => {
     setShowHistory(true);
   };
-
+  const logOut = () => {
+    navigate("/");
+  };
   const handleRecentClick = () => {
     setShowHistory(false);
   };
@@ -24,7 +27,11 @@ const Mypage = () => {
     <div>
       <h1> This is my page</h1>
       <div>
-        <button style={{ marginBottom: "10px" }}>Profile</button>
+        <div>
+          <p>john</p>
+          <p>john@gmail.com</p>
+        </div>
+        <div onClick={logOut}>Logout</div>
       </div>
       <div>
         <button onClick={handleRecentClick} style={{ marginBottom: "10px" }}>
@@ -45,6 +52,7 @@ const Mypage = () => {
                   style={{ cursor: "pointer" }}
                 >
                   <h2>{item.name}</h2>
+                  <p>Item Status: {item.status}</p>
                   <p>Expiry Date: {item.expiryDate}</p>
                   <p>Description: {item.description}</p>
                   <hr />
@@ -57,7 +65,6 @@ const Mypage = () => {
                   style={{ cursor: "pointer" }}
                 >
                   <h2>{item.name}</h2>
-                  <p>Username: {item.username}</p>
                   <p>Expiry Date: {item.expiryDate}</p>
                   <p>Description: {item.description}</p>
                   <hr />
@@ -65,6 +72,7 @@ const Mypage = () => {
               ))}
         </div>
       </div>
+      <NavBar />
     </div>
   );
 };

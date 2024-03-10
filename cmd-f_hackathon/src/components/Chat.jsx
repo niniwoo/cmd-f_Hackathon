@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "./NavBar";
 
 const Chat = () => {
   return (
@@ -12,9 +13,9 @@ const Chat = () => {
                 <div className="message-info">Sender</div>
                 <div className="message-text">Hello there!</div>
               </div>
-              <div className="message sent">
-                <div className="message-text">Hi there!</div>
-                <div className="message-info">You</div>
+              <div>
+                <div>Hi there!</div>
+                <div>You</div>
               </div>
             </div>
             <div className="card-footer">
@@ -28,6 +29,7 @@ const Chat = () => {
           </div>
         </div>
       </div>
+      <NavBar />
     </div>
   );
 };

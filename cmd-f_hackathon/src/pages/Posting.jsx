@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../components/NavBar";
 const Posting = () => {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(0);
@@ -65,6 +66,7 @@ const Posting = () => {
 
         <button>next</button>
       </form>
+      <NavBar />
     </div>
   );
 };

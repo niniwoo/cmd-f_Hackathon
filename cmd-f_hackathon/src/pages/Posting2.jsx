@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "../components/NavBar";
 
 const Posting2 = () => {
   const [isChecked, setIsChecked] = useState({
@@ -76,6 +77,7 @@ const Posting2 = () => {
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <button onClick={handleSubmit}>Submit</button>
       </div>
+      <NavBar />
     </div>
   );
 };
